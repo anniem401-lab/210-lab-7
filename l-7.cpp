@@ -2,51 +2,61 @@
 // IDE used: Visual Studio Code
 
 #include <iostream>
+#include <string>
 using namespace std;
 
-void reverseArray();
-void displayArray();
+void reverseArray(string*);
+void displayArray(string*);
 
 int main() 
 {
-    reverseArray();
-    displayArray();
+    // Pointer notation
+    string *sptr = nullptr;
+    sptr = new string[5]; // Dynamically allocates an array of 5 strings
+
+    // Calls the functions to demonstrate their functionality
+    reverseArray(sptr);
+    displayArray(sptr);
+
+    // Deallocates the memory used for the dynamic array
+    delete[] sptr;
+
     return 0;
 }
 
 // Receives a dynamic string array, reverses the elements, 
 // and returns a pointer to the modified array.
-void reverseArray()
+void reverseArray(string *sptr)
 {
-    string arr[5];
     cout << "Enter 5 names: ";
     for (int i = 0; i < 5; i++)
     {
-        cin >> arr[i];
+        cin >> sptr[i];
     }
 
     cout << "Reversed array: ";
-    for (int i = 9; i >= 0; i--)
+    for (int i = 4; i >= 0; i--)
     {
-        cout << arr[i] << " ";
+        cout << sptr[i] << " ";
     }
     cout << endl;
 }
 
 // Receives a dynamic string array, and outputs its elements.
-void displayArray()
+void displayArray(string *sptr)
 {
-    string arr[5];
-    cout << "Enter 5 names: ";
+    cout << "Original array: ";
     for (int i = 0; i < 5; i++)
     {
-        cin >> arr[i];
-    }
-
-    cout << "Array elements: ";
-    for (int i = 0; i < 5; i++)
-    {
-        cout << arr[i] << " ";
+        cout << sptr[i] << " ";
     }
     cout << endl;
+
+    cout << "Reversed array: ";
+    for (int i = 4; i >= 0; i--)
+    {
+        cout << sptr[i] << " ";
+    }
+    cout << endl;
+
 }
