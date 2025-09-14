@@ -13,10 +13,17 @@ int main()
     // Pointer notation
     string *sptr = nullptr;
     sptr = new string[5]; // Dynamically allocates an array of 5 strings
+    
+    cout << endl << endl;
+    cout << "Enter 5 names: ";
+    for (int i = 0; i < 5; i++)
+    {
+        cin >> sptr[i];
+    }
 
-    // Calls the functions to demonstrate their functionality
-    reverseArray(sptr);
-    displayArray(sptr);
+    cout << endl << endl;
+    displayArray(sptr); // Displays the original and reversed array
+    cout << endl;
 
     // Deallocates the memory used for the dynamic array
     delete[] sptr;
@@ -28,12 +35,6 @@ int main()
 // and returns a pointer to the modified array.
 void reverseArray(string *sptr)
 {
-    cout << "Enter 5 names: ";
-    for (int i = 0; i < 5; i++)
-    {
-        cin >> sptr[i];
-    }
-
     cout << "Reversed array: ";
     for (int i = 4; i >= 0; i--)
     {
@@ -50,7 +51,7 @@ void displayArray(string *sptr)
     {
         cout << sptr[i] << " ";
     }
-    cout << endl;
+    cout << endl << endl;
 
     cout << "Reversed array: ";
     for (int i = 4; i >= 0; i--)
