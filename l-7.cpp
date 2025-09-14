@@ -7,10 +7,11 @@ using namespace std;
 void reverseArray();
 void displayArray();
 
-
 int main() 
 {
-    
+    reverseArray();
+    displayArray();
+    return 0;
 }
 
 // Receives a dynamic string array, reverses the elements, 
@@ -34,3 +35,18 @@ void reverseArray()
 
 // Receives a dynamic string array, and outputs its elements.
 void displayArray()
+{
+    string arr[5];
+    cout << "Enter 5 names: ";
+    for (int i = 0; i < 5; i++)
+    {
+        cin >> arr[i];
+    }
+
+    cout << "Array elements: ";
+    for (int i = 0; i < 5; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
